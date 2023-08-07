@@ -1,0 +1,11 @@
+{
+"OpenAI - davinci": {"name":"davinci", "provider":"OpenAI", "type":"default"},
+"OpenAI - GPT4": {"name":"gpt-4", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-4-0613": {"name":"gpt-4-0613", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-4-32k": {"name":"gpt-4-32k", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-4-32k-0613": {"name":"gpt-4-32k-0613", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-3.5-turbo": {"name":"gpt-3.5-turbo", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-3.5-turbo-16k": {"name":"gpt-3.5-turbo-16k", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-3.5-turbo-0613": {"name":"gpt-3.5-turbo-0613", "provider":"OpenAI", "type":"chat"},
+"OpenAI - gpt-3.5-turbo-16k-0613": {"name":"gpt-3.5-turbo-16k-0613", "provider":"OpenAI", "type":"chat"}
+}
