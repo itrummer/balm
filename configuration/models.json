@@ -1,5 +1,8 @@
 {
 "OpenAI - davinci": {"name":"davinci", "provider":"OpenAI", "type":"default"},
+"OpenAI - curie": {"name":"curie", "provider":"OpenAI", "type":"default"},
+"OpenAI - babbage": {"name":"babbage", "provider":"OpenAI", "type":"default"},
+"OpenAI - ada": {"name":"ada", "provider":"OpenAI", "type":"default"},
 "OpenAI - GPT4": {"name":"gpt-4", "provider":"OpenAI", "type":"chat"},
 "OpenAI - gpt-4-0613": {"name":"gpt-4-0613", "provider":"OpenAI", "type":"chat"},
 "OpenAI - gpt-4-32k": {"name":"gpt-4-32k", "provider":"OpenAI", "type":"chat"},

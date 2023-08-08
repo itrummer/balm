@@ -24,12 +24,28 @@ class Analysis():
     
     def add_value_stats(self):
         """ Add value distribution for each column. """
-        for model_label in self.selected_models:
-            model_results = self.results_df[model_label]
-            st.write(model_results)
-            histogram = model_results.value_counts().reset_index()
-            st.write(histogram)
-            st.write(histogram.columns)
-            histogram.columns = ['Output', 'Count']
-            chart = alt.Chart(histogram).mark_bar().encode(x='Output', y='Count')
-            st.altair_chart(chart, use_container_width=True)
+        with st.expander('Output Distribution'):
+            for model_label in self.selected_models:
+                model_results = self.results_df[model_label]
+                histogram = model_results.value_counts().reset_index()
+                histogram.columns = ['Output', 'Count']
+                chart = alt.Chart(histogram).mark_bar().encode(
+                    x='Output', y='Count').properties(title=model_label)
+                st.altair_chart(chart, use_container_width=False)
+    
+    def add_overlap_info(self):
+        """ Add visualizations on overlap between different models. """
+        with st.expander('Model Agreement'):
+            nr_results = len(self.results)
+            ratio_table = []
+            for model_1 in self.selected_models:
+                ratio_row = {}
+                ratio_row['Compared Model'] = model_1
+                for model_2 in self.selected_models:
+                    overlap = self.results_df[model_1] == self.results_df[model_2]
+                    nr_same = sum(overlap)
+                    ratio = nr_same / nr_results
+                    ratio_row[model_2] = ratio
+                
+                ratio_table.append(ratio_row)
+            st.dataframe(ratio_table)
