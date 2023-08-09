@@ -15,6 +15,7 @@ root_dir = pathlib.Path(cur_file_dir).parent.parent
 sys.path.append(str(root_dir))
 
 import balm.analysis
+import balm.load
 import balm.models
 import balm.prompt
 
@@ -55,25 +56,26 @@ with st.expander('Examples'):
         example_output = st.text_input('Example output:', key=f'ExampleOut{i}')
         examples.append((example_input, example_output))
 
-with st.form('submission-form', clear_on_submit=True):
-    upload_args = {'accept_multiple_files':True, 'type':['txt']}
-    in_files = st.file_uploader('Input files:', **upload_args)
-    submitted = st.form_submit_button('Process Data')
+input_type = st.selectbox('Input type', options=['CSV', 'TXT'])
+if input_type == 'CSV':
+    input_docs = balm.load.load_from_csv()
+elif input_type == 'TXT':
+    input_docs = balm.load.load_from_text()
+else:
+    raise ValueError(f'Unsupported input type: {input_type}')
 
-if submitted and in_files:
+if input_docs:
     prompts = balm.prompt.PromptGenerator(task, examples)
     results = []
     result_display = None
-    for in_file in in_files:
-        text = io.StringIO(in_file.getvalue().decode('utf-8')).read()
-        prompt = prompts.prompt(text)
-        file_name = in_file.name
+    for input_doc in input_docs:
+        prompt = prompts.prompt(input_doc)
         model2answer = {}
         for model_label in selected_models:
             answer = models.apply_model(model_label, prompt)
             model2answer[model_label] = answer
 
-        result = {'filename':file_name, 'prompt':prompt} | model2answer
+        result = {'input':input_doc, 'prompt':prompt} | model2answer
         results.append(result)
         result_df = pd.DataFrame([result])
         if result_display is None:
