@@ -3,7 +3,6 @@ Created on Aug 6, 2023
 
 @author: immanueltrummer
 '''
-import io
 import os
 import pathlib
 import pandas as pd
@@ -19,7 +18,8 @@ import balm.load
 import balm.models
 import balm.prompt
 
-st.set_page_config(page_title='BALM')
+icon_path = pathlib.Path(root_dir, 'pictures', 'balm.png')
+st.set_page_config(page_title='BALM', page_icon=str(icon_path))
 st.header('BALM: Batch Analysis with Language Models')
 
 with st.expander('Credentials'):
