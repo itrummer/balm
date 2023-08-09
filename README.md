@@ -58,3 +58,4 @@ Example output: No
 8. Optionally, restrict the number of reviews to process by clicking on the `Limit rows` checkbox and setting a maximal number.
 9. Click on the `Process Data` button to start processing.
 
+You will see results in the result table as they become available from the language model. After processing all input, BALM automatically generates several aggregate statistics. Click on the `Output Distribution` box to obtain a visualization, showing how often specific outputs were produced by the language model. The `Model Agreement` box is only interesting if multiple models are applied to the same data (see the following section). Finally, you can download results as .csv file by clicking on the `Download Results` button. Note that this will erase the current results and reset the interface.
