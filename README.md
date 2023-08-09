@@ -39,5 +39,22 @@ You should see the message `You can now view your Streamlit app in your browser.
 
 ## Example: Analyzing Movie Reviews
 
-We will introduce the BALM interface by an example scenario. You find the example data [here](https://drive.google.com/file/d/1pLtLcOSVsTjrMrHq27RzcYg8NdldV0CU/view?usp=sharing). It is a .csv file containing 100 movie reviews in the first column. You will use language models to map reviews to a sentiment (positive or negative) in the following.
+We will introduce the BALM interface by an example scenario. You find the example data [here](https://drive.google.com/file/d/1pLtLcOSVsTjrMrHq27RzcYg8NdldV0CU/view?usp=sharing). It is a .csv file containing 100 movie reviews in the first column. We will use language models to map reviews to a sentiment (positive or negative) in the following. This example uses language models by OpenAI and requires a corresponding account (see [here](https://platform.openai.com/signup)).
+
+1. Open the BALM interface in your Web browser (this example was tested on Google Chrome but most browsers will work).
+2. Click on the `Credentials` box. Copy your OpenAI API key into the corresponding field (see [here](https://help.openai.com/en/articles/4936850-where-do-i-find-my-secret-api-key)).
+3. Click on the `Models` box. Leave the default (1) for the number of models. E.g., select the gpt-3.5-turbo model.
+4. Enter a task description in the prompt field. For instance:
+```
+Is the sentiment positive (Yes/No)?
+```
+5. Optionally, specify examples to increase output quality (few-shot learning). Click on the `Examples` box, choose the number of examples, then enter example input and output. E.g.:
+```
+Example input: This movie was really bad.
+Example output: No
+```
+6. Select CSV for the input type (the default), then click on `Browse files` and select the input file you previously downloaded.
+7. Movie reviews are stored in the first column, therefore use 0 (default) for the column index (we count starting from zero).
+8. Optionally, restrict the number of reviews to process by clicking on the `Limit rows` checkbox and setting a maximal number.
+9. Click on the `Process Data` button to start processing.
 
