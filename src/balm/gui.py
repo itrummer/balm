@@ -11,7 +11,8 @@ import sys
 
 cur_file_dir = os.path.dirname(__file__)
 root_dir = pathlib.Path(cur_file_dir).parent.parent
-sys.path.append(str(root_dir))
+src_dir = pathlib.Path(root_dir, 'src')
+sys.path.append(str(src_dir))
 
 import balm.analysis
 import balm.load
