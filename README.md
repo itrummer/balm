@@ -1,4 +1,4 @@
-<img align='right' src='https://github.com/itrummer/balm/blob/4b8ff60487d34f5a1e33861616d8e8f793c860a9/pictures/balm2.png' width='256'>
+<img align='right' src='https://github.com/itrummer/balm/blob/4b8ff60487d34f5a1e33861616d8e8f793c860a9/pictures/balm2.png' width='192'>
 
 ![status](https://img.shields.io/badge/status-up-brightgreen) ![Twitter Follow](https://img.shields.io/twitter/follow/:ImmanuelTrummer)
 
