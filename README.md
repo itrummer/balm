@@ -1,3 +1,8 @@
+<img align='right' src='https://github.com/itrummer/balm/blob/903e6115bb484fb9ecd498c652ae15ae4dcaef8f/pictures/balm.png' width='128'>
+
+![status](https://img.shields.io/badge/status-up-brightgreen) ![Twitter Follow](https://img.shields.io/twitter/follow/:ImmanuelTrummer)
+
+
 # BALM: Batch Analysis with Language Models
 
 BALM makes processing batches of documents via large language models easy. Features include:
