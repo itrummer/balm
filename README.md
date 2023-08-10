@@ -73,3 +73,25 @@ The result table now contains one column for each of the selected columns (the c
 After processing, click on `Model Agreement` to see aggregate statistics on output consistency between models. The section contains a table with rows and columns labeled by model names. In each cell, you find the ratio of input documents for which the two models produced exactly the same output. If this ratio is close to one, both models can be used interchangeably. In those cases, select the cheapest of all equivalent models.
 
 ## Configuring BALM
+
+### Adding New Models
+
+You can add new models by changing the `models.json` file in the `configuration` folder. Each entry maps a model label (shown in the model selection drop-down menu) to a model description. This description is a dictionary with the following keys:
+- name: the model name assigned by the provider (which may differ from the label).
+- provider: currently, this has to be set to "OpenAI" (support for other providers is coming soon).
+- type: either "chat" for chat models or "default".
+
+### Increasing Limit on File Size
+
+By default, BALM restricts the size of input files to 10 MB. You can change that number in the file `.streamlit/config.toml`.
+
+## How to Cite
+
+Please cite the following paper to refer to BALM:
+
+```
+test
+```
+
+## Resources
+
