@@ -95,8 +95,16 @@ By default, BALM restricts the size of input files to 10 MB. You can change that
 Please cite the following paper to refer to BALM:
 
 ```
-test
+@article{Trummer2023balm,
+author = {Trummer, Immanuel},
+journal = {CoRR},
+title = {{BALM: Batch Analysis with Language Models}},
+year = {2023}
+}
 ```
 
 ## Resources
 
+- [Tutorial Videos](https://www.youtube.com/channel/UCRPom3J1CUThzJIJ5jk77eA)
+- [BALM Web site]()
+- [Email Feedback](mailto:balmframework@gmail.com?subject=BALM)
